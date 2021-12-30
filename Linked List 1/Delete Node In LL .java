@@ -1,0 +1,36 @@
+public class Solution {
+
+	public static LinkedListNode<Integer> deleteNode(LinkedListNode<Integer> head, int i){
+	
+      	if(head==null){
+          return null;
+        }
+      	//FINDING THE LENGTH OF THE LINKEDLIST
+      	LinkedListNode<Integer> temp=head;
+      	int actual_length=0;
+      	while(temp!=null){
+        	temp=temp.next;
+          	actual_length++;
+        }
+     
+      	if(i>actual_length-1){
+          return head;
+        }	
+      	temp=head;
+      	if(i==0){
+          head=temp.next;
+          return head;
+        }
+		LinkedListNode<Integer> prev=null;
+      	int len=0;
+      
+      	while(len<i){
+          prev=temp;
+          temp=temp.next;
+          len++;
+        }
+      	prev.next=temp.next;
+      	return head;
+      	
+	}
+}
