@@ -16,3 +16,24 @@ public class Main
 		System.out.println(res);
 	}
 }
+---------------------------------------------------------------------------
+	import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int ans=0; 
+        int pos=1;
+        while(n!=0){
+            
+           
+            int d=n%10;
+            ans=ans+d*pos;
+            n=n/10;
+        	pos=pos*2;
+        }
+       
+        System.out.println(ans);
+    }
+}
